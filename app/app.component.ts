@@ -14,11 +14,14 @@ export class AppComponent implements OnInit{
     users: Array<User>;
 
     constructor(private userService: UserService) {
+        this.users = [];
     }
 
 
     ngOnInit() {
-        this.userService.getUsers().subscribe(users => this.users = users);
+        this.userService.getUsers().subscribe(
+            users => this.users = users
+        );
     }
 
 }
