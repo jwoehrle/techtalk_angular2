@@ -34,7 +34,7 @@ export class AppComponent implements OnInit{
     
     filter() {
         if ( this.filterString && this.filterString.length > 0 ) {
-            this.users = this.users.filter( entry => entry.name.startsWith(this.filterString));
+            this.users = this.allUsers.filter( entry => entry.name.startsWith(this.filterString));
         } else {
             this.users = this.allUsers;
         }
