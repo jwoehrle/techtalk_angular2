@@ -32,9 +32,9 @@ export class AppComponent implements OnInit{
         console.log("Key pressed " + event.target.valueOf());
     }
     
-    filter() {
-        if ( this.filterString && this.filterString.length > 0 ) {
-            this.users = this.allUsers.filter( entry => entry.name.startsWith(this.filterString));
+    filter(value: string) {        
+        if ( value && value.length > 0 ) {
+            this.users = this.allUsers.filter( entry => entry.name.toUpperCase().startsWith(value.toUpperCase()));
         } else {
             this.users = this.allUsers;
         }
