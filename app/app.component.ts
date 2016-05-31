@@ -2,12 +2,14 @@ import {Component} from '@angular/core';
 import {UserService} from "./user.service";
 import { OnInit } from '@angular/core';
 import {User} from "./User";
+import {NamePipe} from "./name.pipe";
 
 @Component({
     selector: 'my-app',
     templateUrl: './app/app.component.html',
     styleUrls: ['./app/app.component.css'],
-    providers: [UserService]
+    providers: [UserService],
+    pipes: [NamePipe]
 })
 export class AppComponent implements OnInit{
 
@@ -27,17 +29,4 @@ export class AppComponent implements OnInit{
             users => this.users = this.allUsers = users        
         );
     }
-    
-    updateFilter(event: Event) {        
-        console.log("Key pressed " + event.target.valueOf());
-    }
-    
-    filter(value: string) {        
-        if ( value && value.length > 0 ) {
-            this.users = this.allUsers.filter( entry => entry.name.toUpperCase().startsWith(value.toUpperCase()));
-        } else {
-            this.users = this.allUsers;
-        }
-    }
-
 }
