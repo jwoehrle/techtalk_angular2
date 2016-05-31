@@ -1,4 +1,6 @@
 <h1>My First Angular 2 App</h1>
+Filter: <input type="text" [(ngModel)]="filterString"/>
+<button (click)="filter()" >Filtern!</button>
 <ul>
     <li *ngFor="let item of users; let i = index">{{item.name}}</li>
 </ul>

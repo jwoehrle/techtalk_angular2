@@ -12,6 +12,10 @@ import {User} from "./User";
 export class AppComponent implements OnInit{
 
     users: Array<User>;
+    allUsers: Array<User>;
+
+
+    filterString: string;
 
     constructor(private userService: UserService) {
         this.users = [];
@@ -20,8 +24,20 @@ export class AppComponent implements OnInit{
 
     ngOnInit() {
         this.userService.getUsers().subscribe(
-            users => this.users = users
+            users => this.users = this.allUsers = users        
         );
+    }
+    
+    updateFilter(event: Event) {        
+        console.log("Key pressed " + event.target.valueOf());
+    }
+    
+    filter() {
+        if ( this.filterString && this.filterString.length > 0 ) {
+            this.users = this.users.filter( entry => entry.name.startsWith(this.filterString));
+        } else {
+            this.users = this.allUsers;
+        }
     }
 
 }
