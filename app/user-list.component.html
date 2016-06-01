@@ -1,6 +1,7 @@
 <h2>Users</h2>
 
 Filter: <input type="text" [(ngModel)]="filterString"/>
+<div *ngIf="!users || users.length === 0">Loading users ...</div>
 <ul>
     <li *ngFor="let item of (users | namePipe: filterString); let i = index"
 		(click)="onSelectUser(item)">
