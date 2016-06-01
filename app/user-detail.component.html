@@ -1,7 +1,11 @@
 <h1>User details</h1>
 
 <div *ngIf="user">
-<div><label>Name:</label> {{user.name}}</div>
-<div><label>Email:</label> {{user.email}}</div>
-<div><label>Phone:</label> {{user.phone}}</div>
+	<div><label>Name:</label> {{user.name}}</div>
+	<div><label>Email:</label> {{user.email}}</div>
+	<div><label>Phone:</label> {{user.phone}}</div>
 </div>
+
+<nav>
+  <a [routerLink]="['UserList']">Back to user list</a>
+</nav>

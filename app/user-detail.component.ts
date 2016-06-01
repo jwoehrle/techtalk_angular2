@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouteParams } from '@angular/router-deprecated';
+import { RouteParams, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 
 import { User } from './user';
 import { UserService } from './user.service';
@@ -7,6 +7,7 @@ import { UserService } from './user.service';
 @Component({
   selector: 'user-detail',
   templateUrl: 'app/user-detail.component.html',
+  directives: [ROUTER_DIRECTIVES],
 })
 export class UserDetailComponent implements OnInit {
     id: Number;
