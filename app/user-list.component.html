@@ -1,0 +1,9 @@
+<h2>Users</h2>
+
+Filter: <input type="text" [(ngModel)]="filterString"/>
+<ul>
+    <li *ngFor="let item of (users | namePipe: filterString); let i = index"
+		(click)="onSelectUser(item)">
+		{{item.name}}
+	</li>
+</ul>

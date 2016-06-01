@@ -1,12 +1,3 @@
 <h1>My First Angular 2 App</h1>
-Filter: <input type="text" [(ngModel)]="filterString"/>
-<ul>
-    <li *ngFor="let item of (users | namePipe: filterString); let i = index"
-		(click)="onSelectUser(item)">
-		{{item.name}}
-	</li>
-</ul>
 
-<div>
 <router-outlet></router-outlet>
-</div>
